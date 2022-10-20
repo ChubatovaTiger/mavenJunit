@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.jetbrains</groupId>
 	<artifactId>maven-demo</artifactId>
-	<version>${revision}</version>
+	<version>${revision1}</version>
 	<name>maven-demo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
