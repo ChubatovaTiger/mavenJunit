@@ -41,9 +41,8 @@
            		 <version>3.0.0-M7</version>
           		  <configuration>
              		   <includes>
-                 		   <include>**/*3Tests.java</include>
-				   <include>**/*2Tests.java</include>
-				   <include>**/*4Tests.java</include>
+                 		   <include>**/*Tests.java</include>
+			
                		 </includes>
 	
    		         </configuration>
