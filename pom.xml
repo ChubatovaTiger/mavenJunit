@@ -43,6 +43,7 @@
              		   <includes>
                  		   <include>**/*3Tests.java</include>
 				   <include>**/*2Tests.java</include>
+				   <include>**/*4Tests.java</include>
                		 </includes>
 	
    		         </configuration>
