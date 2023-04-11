@@ -10,18 +10,9 @@ import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import System;
+import System
 
 
-@BeforeEach
-public void setUp() {
-    System.setOut(new PrintStream(new ByteArrayOutputStream()));
-}
-
-@After
-public void restoreInitialStreams() {
-    System.setOut(originalOut);
-}
 
 
 
@@ -38,7 +29,9 @@ class MavenDemoApplication4Tests {
             {
             // this part is executed when an exception (in this example InterruptedException) occurs
             }
+		 System.setOut(new PrintStream(new ByteArrayOutputStream()));
 		System.out.print("test output");
+		System.setOut(System.out)
 		assertThat("foo1").isEqualTo("foo1");
 
 	}
