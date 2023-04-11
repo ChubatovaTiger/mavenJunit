@@ -19,7 +19,7 @@ class MavenDemoApplication3Tests {
 	void contextLoads11() {
 		System.setOut(new PrintStream(new ByteArrayOutputStream()));
 		System.out.print("test output");
-		System.setOut(System.out)
+		System.setOut(System.out);
 		assertThat("foo").isEqualTo("foo");
 
 	}
