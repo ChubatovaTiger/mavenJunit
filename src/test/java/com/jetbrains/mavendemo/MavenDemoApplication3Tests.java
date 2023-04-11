@@ -21,21 +21,14 @@ private final PrintStream defaultOut = System.out;
 	private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 	private final ByteArrayOutputStream errStream = new ByteArrayOutputStream();
 
-	@BeforeEach
-	public void setUpStreams() {
-		System.setOut(new PrintStream(outStream));
-		System.setErr(new PrintStream(errStream));
-	}
-
-	@AfterEach
-	public void restoreStreams() {
-		System.setOut(defaultOut);
-		System.setErr(defaultErr);
-	}
-
 	@Test
 	public void outTest() {
+		System.setOut(new PrintStream(outStream));
+		System.setErr(new PrintStream(errStream));
+
 		System.out.print("test");
+		System.setOut(defaultOut);
+		System.setErr(defaultErr);
 		assertEquals("test", outStream.toString());
 	}
 
