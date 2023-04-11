@@ -11,9 +11,33 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import java.lang.System.*;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 @SpringBootTest
 class MavenDemoApplication3Tests {
+private final PrintStream defaultOut = System.out;
+	private final PrintStream defaultErr = System.err;
+	private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+	private final ByteArrayOutputStream errStream = new ByteArrayOutputStream();
+
+	@BeforeEach
+	public void setUpStreams() {
+		System.setOut(new PrintStream(outStream));
+		System.setErr(new PrintStream(errStream));
+	}
+
+	@AfterEach
+	public void restoreStreams() {
+		System.setOut(defaultOut);
+		System.setErr(defaultErr);
+	}
+
+	@Test
+	public void outTest() {
+		System.out.print("test");
+		assertEquals("test", outStream.toString());
+	}
 
 	@Test
 	void contextLoads11() {
