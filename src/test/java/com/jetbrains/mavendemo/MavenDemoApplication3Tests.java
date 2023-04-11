@@ -32,14 +32,7 @@ private final PrintStream defaultOut = System.out;
 		assertEquals("test", outStream.toString());
 	}
 
-	@Test
-	void contextLoads11() {
-		out = System.out;
-    out.println("Test 1");
-    out.close();
-		assertThat("foo").isEqualTo("foo");
 
-	}
 		@Test
 	void contextLoads32() {
 		assertThat("foo").isEqualTo("foo");
