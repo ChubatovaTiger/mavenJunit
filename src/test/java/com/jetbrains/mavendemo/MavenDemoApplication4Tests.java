@@ -25,7 +25,7 @@ class MavenDemoApplication4Tests {
             {
             // this part is executed when an exception (in this example InterruptedException) occurs
             }
-		assertThat("foo1").isEqualTo("foo1");
+		assertThat("🐳").isEqualTo("foo1");
 
 	}
 		@Test
