@@ -12,21 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import System;
 
-private final ByteArrayOutputStream out = new ByteArrayOutputStream();
-private final ByteArrayOutputStream err = new ByteArrayOutputStream();
-private final PrintStream originalOut = System.out;
-private final PrintStream originalErr = System.err;
 
-@Before
-public void setStreams() {
-    System.setOut(new PrintStream(out));
-    System.setErr(new PrintStream(err));
+@BeforeEach
+public void setUp() {
+    System.setOut(new PrintStream(new ByteArrayOutputStream()));
 }
 
 @After
 public void restoreInitialStreams() {
     System.setOut(originalOut);
-    System.setErr(originalErr);
 }
 
 
