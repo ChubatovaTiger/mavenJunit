@@ -45,8 +45,7 @@ private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 		assertThat("foo").isEqualTo("foo");
 
 	}
-		@Test
-	void contextLoads33() {
+
 		@Test
 	void contextLoads11() {
 		try 
