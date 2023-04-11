@@ -17,18 +17,14 @@ import java.io.PrintStream;
 @SpringBootTest
 class MavenDemoApplication3Tests {
 private final PrintStream defaultOut = System.out;
-	private final PrintStream defaultErr = System.err;
-	private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
-	private final ByteArrayOutputStream errStream = new ByteArrayOutputStream();
+private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+
 
 	@Test
-	public void outTest() {
+	void outTest() {
 		System.setOut(new PrintStream(outStream));
-		System.setErr(new PrintStream(errStream));
-
 		System.out.print("test");
 		System.setOut(defaultOut);
-		System.setErr(defaultErr);
 		assertEquals("test", outStream.toString());
 	}
 
