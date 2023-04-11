@@ -7,7 +7,8 @@ package com.jetbrains.mavendemo;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import java.lang.System.*;
@@ -19,12 +20,21 @@ class MavenDemoApplication3Tests {
 private final PrintStream defaultOut = System.out;
 private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 
+@BeforeEach
+	public void setUpStreams() {
+		System.setOut(new PrintStream(outStream));
+	}
 
+	@AfterEach
+	public void restoreStreams() {
+		System.setOut(defaultOut);
+	}
+	
 	@Test
 	void outTest() {
-		System.setOut(new PrintStream(outStream));
+		
 		System.out.println("bober");
-		System.setOut(defaultOut);
+
 		assertThat("foo").isEqualTo("foo");
 	}
 
