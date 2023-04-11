@@ -23,7 +23,7 @@ private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 	@Test
 	void outTest() {
 		System.setOut(new PrintStream(outStream));
-		System.out.print("testtiger");
+		System.out.println("bober");
 		System.setOut(defaultOut);
 		assertThat("foo").isEqualTo("foo");
 	}
