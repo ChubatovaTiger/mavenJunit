@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.lang.System.*;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.lang.Thread;
 
 @SpringBootTest
 class MavenDemoApplication3Tests {
@@ -46,6 +47,16 @@ private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 	}
 		@Test
 	void contextLoads33() {
+		@Test
+	void contextLoads11() {
+		try 
+            {
+                Thread.sleep(60000);
+            } 
+            catch(InterruptedException e)
+            {
+            // this part is executed when an exception (in this example InterruptedException) occurs
+            }
 		assertThat("foo").isEqualTo("foo");
 
 	}
