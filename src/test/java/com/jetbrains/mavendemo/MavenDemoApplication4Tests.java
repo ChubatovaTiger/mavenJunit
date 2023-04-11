@@ -17,7 +17,14 @@ class MavenDemoApplication4Tests {
 
 	@Test
 	void contextLoads11() {
-		Thread.sleep(6000);
+		try 
+            {
+                Thread.sleep(6000);
+            } 
+            catch(InterruptedException e)
+            {
+            // this part is executed when an exception (in this example InterruptedException) occurs
+            }
 		assertThat("foo1").isEqualTo("foo1");
 
 	}
