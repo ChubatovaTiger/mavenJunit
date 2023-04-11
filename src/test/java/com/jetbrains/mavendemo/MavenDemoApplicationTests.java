@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import java.lang.System.*;
 
 @SpringBootTest
 class MavenDemoApplicationTests {
@@ -21,6 +22,7 @@ class MavenDemoApplicationTests {
 	}
 		@Test
 	void contextLoads12() {
+		System.out.println("lisa");
 		assertThat("foo").isEqualTo("foo");
 
 	}
