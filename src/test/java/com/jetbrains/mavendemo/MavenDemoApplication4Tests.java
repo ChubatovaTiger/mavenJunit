@@ -16,6 +16,7 @@ class MavenDemoApplication4Tests {
 
 	@Test
 	void contextLoads11() {
+		Thread.sleep(6000);
 		assertThat("foo1").isEqualTo("foo1");
 
 	}
