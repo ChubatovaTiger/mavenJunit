@@ -17,7 +17,7 @@ class MavenDemoApplication3Tests {
 
 	@Test
 	void contextLoads11() {
-		private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+		ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(outputStreamCaptor));
 		System.out.print("test output");
 		System.setOut(System.out);
