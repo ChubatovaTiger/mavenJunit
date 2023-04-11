@@ -25,7 +25,7 @@ private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(outStream));
 		System.out.print("test");
 		System.setOut(defaultOut);
-		assertEquals("test", "test");
+		assertThat("foo").isEqualTo("foo");
 	}
 
 
