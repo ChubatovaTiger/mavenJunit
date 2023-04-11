@@ -10,12 +10,16 @@ import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import System;
 
 @SpringBootTest
 class MavenDemoApplication3Tests {
 
 	@Test
 	void contextLoads11() {
+		System.setOut(new PrintStream(new ByteArrayOutputStream()));
+		System.out.print("test output");
+		System.setOut(System.out)
 		assertThat("foo").isEqualTo("foo");
 
 	}
