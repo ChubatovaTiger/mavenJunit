@@ -17,7 +17,8 @@ class MavenDemoApplication3Tests {
 
 	@Test
 	void contextLoads11() {
-		System.setOut(new PrintStream(new ByteArrayOutputStream()));
+		private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outputStreamCaptor));
 		System.out.print("test output");
 		System.setOut(System.out);
 		assertThat("foo").isEqualTo("foo");
