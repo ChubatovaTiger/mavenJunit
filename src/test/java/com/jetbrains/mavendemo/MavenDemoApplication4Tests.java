@@ -19,7 +19,7 @@ class MavenDemoApplication4Tests {
 	void contextLoads11() {
 		try 
             {
-                Thread.sleep(6000);
+                Thread.sleep(60000);
             } 
             catch(InterruptedException e)
             {
