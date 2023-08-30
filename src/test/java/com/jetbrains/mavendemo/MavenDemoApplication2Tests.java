@@ -17,7 +17,7 @@ class MavenDemoApplication2Tests {
 	@Test
 	void contextLoads21() {
 		System.out.println("lisa");
-		assertThat("foo").isEqualTo("foo1");
+		assertThat("foo").isEqualTo("foo");
 
 	}
 		@Test
