@@ -1,4 +1,5 @@
 package com.jetbrains.mavendemo;
+import java.util.Vector;
 
 //import org.junit.jupiter.api.Test;
 //import org.springframework.boot.test.context.SpringBootTest;
@@ -50,7 +51,19 @@ private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 	void contextLoads11() {
 		try 
             {
-                Thread.sleep(60000);
+                //Thread.sleep(60000);
+		    ///MEMORY EATER
+		        Vector v = new Vector();
+    while (true)
+    {
+      byte b[] = new byte[1048576];
+      v.add(b);
+      Runtime rt = Runtime.getRuntime();
+      System.out.println( "free memory: " + rt.freeMemory() );
+    }
+
+		    /////END MEMORY EATER
+
             } 
             catch(InterruptedException e)
             {
