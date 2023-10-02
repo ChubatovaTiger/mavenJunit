@@ -67,7 +67,7 @@ private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 	void contextLoads11() {
 		try 
             {
-                Thread.sleep(60000);
+                Thread.sleep(600);
             } 
             catch(InterruptedException e)
             {
