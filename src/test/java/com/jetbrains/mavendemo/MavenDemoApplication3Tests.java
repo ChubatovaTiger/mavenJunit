@@ -48,6 +48,22 @@ private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 	}
 
 		@Test
+	void memoryEater32() {
+		Vector v = new Vector();
+    while (true)
+    {
+      byte b[] = new byte[1048576];
+      v.add(b);
+      Runtime rt = Runtime.getRuntime();
+      System.out.println( "free memory: " + rt.freeMemory() );
+    }
+
+	}
+
+
+	
+
+		@Test
 	void contextLoads11() {
 		try 
             {
