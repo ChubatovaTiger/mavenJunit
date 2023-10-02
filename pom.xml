@@ -58,7 +58,7 @@
 	
                		 </includes>
 
-                    <argLine>-Xmx10m -XX:+HeapDumpOnOutOfMemoryError </argLine>
+                    <argLine>-Xmx10m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=%teamcity.agent.work.dir%/maven-project/module-path/target</argLine>
 
    		         </configuration>
     			    </plugin>
