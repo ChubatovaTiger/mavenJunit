@@ -58,7 +58,7 @@
 	
                		 </includes>
 
-                    <argLine>-Xmx10m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=%teamcity.agent.work.dir%/target</argLine>
+                    <argLine>-Xmx10m -XX:+HeapDumpOnOutOfMemoryError </argLine>
 
    		         </configuration>
     			    </plugin>
