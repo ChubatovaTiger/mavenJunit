@@ -58,7 +58,7 @@
 	
                		 </includes>
 
-                    <argLine>-Xmx5m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/Users/Nastasia.Chubatova/Downloads/TeamCity2023054/buildAgent/work/9eec552822de4a1d/target</argLine>
+                    <argLine>-Xmx1024m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/Users/Nastasia.Chubatova/Downloads/TeamCity2023054/buildAgent/work/9eec552822de4a1d/target</argLine>
 
    		         </configuration>
     			    </plugin>
