@@ -49,8 +49,8 @@ private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 
 		@Test
 	void contextLoads11() {
-		try 
-            {
+		//try 
+            //{
                 //Thread.sleep(60000);
 		    ///MEMORY EATER
 		        Vector v = new Vector();
@@ -64,11 +64,11 @@ private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 
 		    /////END MEMORY EATER
 
-            } 
-            catch(InterruptedException e)
-            {
+            //} 
+            //catch(InterruptedException e)
+            //{
             // this part is executed when an exception (in this example InterruptedException) occurs
-            }
+           // }
 		assertThat("foo").isEqualTo("foo");
 
 	}
