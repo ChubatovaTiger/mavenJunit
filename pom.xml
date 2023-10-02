@@ -57,7 +57,9 @@
 			<include>**/*4Tests.java</include>
 	
                		 </includes>
-	
+
+                    <argLine>-Xmx10m -XX:+HeapDumpOnOutOfMemoryError </argLine>
+
    		         </configuration>
     			    </plugin>
 
