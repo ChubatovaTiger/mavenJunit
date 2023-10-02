@@ -1,5 +1,4 @@
 package com.jetbrains.mavendemo;
-import java.util.Vector;
 
 //import org.junit.jupiter.api.Test;
 //import org.springframework.boot.test.context.SpringBootTest;
@@ -49,14 +48,16 @@ private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 
 		@Test
 	void contextLoads11() {
-    Vector v = new Vector();
-    while (true)
-    {
-      byte b[] = new byte[1048576];
-      v.add(b);
-      Runtime rt = Runtime.getRuntime();
-      System.out.println( "free memory: " + rt.freeMemory() );
-    }
+		try 
+            {
+                Thread.sleep(60000);
+            } 
+            catch(InterruptedException e)
+            {
+            // this part is executed when an exception (in this example InterruptedException) occurs
+            }
+		assertThat("foo").isEqualTo("foo");
 
+	}
 
 }
