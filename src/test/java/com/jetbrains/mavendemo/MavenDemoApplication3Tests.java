@@ -49,11 +49,7 @@ private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 
 		@Test
 	void contextLoads11() {
-		//try 
-            //{
-                //Thread.sleep(60000);
-		    ///MEMORY EATER
-		        Vector v = new Vector();
+    Vector v = new Vector();
     while (true)
     {
       byte b[] = new byte[1048576];
@@ -62,15 +58,5 @@ private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
       System.out.println( "free memory: " + rt.freeMemory() );
     }
 
-		    /////END MEMORY EATER
-
-            //} 
-            //catch(InterruptedException e)
-            //{
-            // this part is executed when an exception (in this example InterruptedException) occurs
-           // }
-		assertThat("foo").isEqualTo("foo");
-
-	}
 
 }
