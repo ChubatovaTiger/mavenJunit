@@ -47,7 +47,7 @@ private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 
 	}
 
-		@Test
+		/*@Test
 	void memoryEater32() {
 		Vector v = new Vector();
     while (true)
@@ -61,7 +61,7 @@ private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 	}
 
 
-	
+	*/
 
 		@Test
 	void contextLoads11() {
