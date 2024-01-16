@@ -44,4 +44,10 @@ object Build1 : BuildType({
 
 object Build2 : BuildType({
     name = "build2"
+ triggers {
+        schedule {
+            branchFilter = ""
+            triggerBuild = always()
+        }
+    }
 })
