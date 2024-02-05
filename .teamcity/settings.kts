@@ -65,7 +65,7 @@ object NonBundled396 : BuildType({
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             mavenVersion = bundled_3_9_6()
-            jdkHome = "%env.JDK_11%"
+            jdkHome = "%env.JDK_17_0%"
         }
     }
 })
