@@ -27,6 +27,7 @@ version = "2023.11"
 
 project {
 
+    buildType(NonBundled396)
     buildType(BundledDefault363)
 
     params {
@@ -47,6 +48,24 @@ object BundledDefault363 : BuildType({
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             jvmArgs = "mm"
+        }
+    }
+})
+
+object NonBundled396 : BuildType({
+    name = "non-bundled3.9.6changed"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        maven {
+            id = "Maven2"
+            goals = "clean test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            mavenVersion = bundled_3_9_6()
+            jdkHome = "%env.JDK_11%"
         }
     }
 })
