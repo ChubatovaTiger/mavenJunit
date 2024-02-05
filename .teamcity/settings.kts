@@ -41,7 +41,7 @@ object Kkjkj : BuildType({
         maven {
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
-            mavenVersion = bundled_3_2()
+            mavenVersion = bundled_3_3()
         }
     }
 })
