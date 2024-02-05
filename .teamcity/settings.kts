@@ -27,7 +27,6 @@ version = "2023.11"
 
 project {
 
-    buildType(NonBundled396)
     buildType(BundledDefault363)
     buildType(Nonbundled322)
 
@@ -48,26 +47,6 @@ object BundledDefault363 : BuildType({
             id = "Maven2"
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
-        }
-    }
-})
-
-object NonBundled396 : BuildType({
-    name = "non-bundled3.9.6changed"
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-    steps {
-        maven {
-            id = "Maven2"
-            goals = "clean test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-            mavenVersion = custom {
-                path = "%teamcity.tool.maven.3.9.6%"
-            }
-            jdkHome = "%env.JDK_11%"
         }
     }
 })
