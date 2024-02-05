@@ -2,6 +2,7 @@ package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.BuildType
+import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.ui.*
 
 /*
@@ -12,5 +13,11 @@ in the root project, and delete the patch script.
 create(DslContext.projectId, BuildType({
     id("New")
     name = "new"
+
+    steps {
+        maven {
+            id = "Maven2"
+        }
+    }
 }))
 
