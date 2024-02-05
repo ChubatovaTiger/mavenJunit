@@ -45,7 +45,9 @@ object Kkjkj : BuildType({
         }
         maven {
             id = "Maven2"
-            mavenVersion = bundled_3_2()
+            mavenVersion = custom {
+                path = "%teamcity.tool.maven.3.2.2%"
+            }
         }
     }
 })
