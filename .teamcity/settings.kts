@@ -89,7 +89,7 @@ object Mvn : BuildType({
 })
 
 object NonBundled396 : BuildType({
-    name = "non-bundled3.9.6"
+    name = "non-bundled3.9.6changed"
 
     vcs {
         root(DslContext.settingsRoot)
