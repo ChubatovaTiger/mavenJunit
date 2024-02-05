@@ -43,5 +43,9 @@ object Kkjkj : BuildType({
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             mavenVersion = bundled_3_2()
         }
+        maven {
+            id = "Maven2"
+            mavenVersion = bundled_3_2()
+        }
     }
 })
