@@ -30,7 +30,6 @@ project {
     buildType(NonBundled396)
     buildType(Mvn)
     buildType(BundledDefault363)
-    buildType(Auto)
     buildType(Nonbundled322)
 
     params {
@@ -39,23 +38,6 @@ project {
 
     subProject(Nonused)
 }
-
-object Auto : BuildType({
-    name = "auto"
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-    steps {
-        maven {
-            id = "Maven2"
-            goals = "clean test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-            mavenVersion = auto()
-        }
-    }
-})
 
 object BundledDefault363 : BuildType({
     name = "bundledDefault3.6.3"
@@ -132,4 +114,23 @@ object Nonbundled322 : BuildType({
 
 object Nonused : Project({
     name = "nonused"
+
+    buildType(Auto)
+})
+
+object Auto : BuildType({
+    name = "auto"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        maven {
+            id = "Maven2"
+            goals = "clean test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            mavenVersion = auto()
+        }
+    }
 })
