@@ -28,15 +28,12 @@ version = "2023.11"
 project {
 
     buildType(NonBundled396)
-    buildType(Mvn)
     buildType(BundledDefault363)
     buildType(Nonbundled322)
 
     params {
         param("env.M2_HOME", "/opt/homebrew/Cellar/maven/3.9.5/libexec")
     }
-
-    subProject(Nonused)
 }
 
 object BundledDefault363 : BuildType({
@@ -51,23 +48,6 @@ object BundledDefault363 : BuildType({
             id = "Maven2"
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
-        }
-    }
-})
-
-object Mvn : BuildType({
-    name = "bundled3.2.5"
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-    steps {
-        maven {
-            id = "Maven2"
-            goals = "clean test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-            mavenVersion = bundled_3_2()
         }
     }
 })
@@ -107,30 +87,6 @@ object Nonbundled322 : BuildType({
             mavenVersion = custom {
                 path = "%teamcity.tool.maven.3.2.2%"
             }
-        }
-    }
-})
-
-
-object Nonused : Project({
-    name = "nonused"
-
-    buildType(Auto)
-})
-
-object Auto : BuildType({
-    name = "auto"
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-    steps {
-        maven {
-            id = "Maven2"
-            goals = "clean test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-            mavenVersion = auto()
         }
     }
 })
