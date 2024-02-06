@@ -29,6 +29,7 @@ version = "2023.11"
 project {
 
     buildType(NonBundled396)
+    buildType(Mvn)
     buildType(Auto)
     buildType(OutsideOfRunner)
 
@@ -50,6 +51,24 @@ object Auto : BuildType({
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             mavenVersion = auto()
+        }
+    }
+})
+
+object Mvn : BuildType({
+    name = "bundled3.2.5"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        maven {
+            id = "Maven2"
+            goals = "clean test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            mavenVersion = bundled_3_2()
+            dockerImage = "openjdk:17-ea-slim"
         }
     }
 })
