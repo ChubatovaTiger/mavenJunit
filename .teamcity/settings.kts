@@ -28,6 +28,7 @@ version = "2023.11"
 project {
 
     buildType(NonBundled396)
+    buildType(id395_2)
     buildType(id395)
 
     params {
@@ -38,6 +39,26 @@ project {
 object id395 : BuildType({
     id("395")
     name = "3.9.5"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        maven {
+            id = "Maven2"
+            goals = "clean test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            mavenVersion = custom {
+                path = "%teamcity.tool.maven.3.9.5%"
+            }
+        }
+    }
+})
+
+object id395_2 : BuildType({
+    id("395_2")
+    name = "3.9.5 (1)"
 
     vcs {
         root(DslContext.settingsRoot)
