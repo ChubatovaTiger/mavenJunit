@@ -32,6 +32,7 @@ project {
     buildType(Mvn)
     buildType(BundledDefault363)
     buildType(Auto)
+    buildType(Nonbundled322)
     buildType(OutsideOfRunner)
 
     params {
@@ -104,6 +105,26 @@ object NonBundled396 : BuildType({
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             mavenVersion = custom {
                 path = "%teamcity.tool.maven.3.9.6%"
+            }
+            dockerImage = "openjdk:17-ea-slim"
+        }
+    }
+})
+
+object Nonbundled322 : BuildType({
+    name = "nonbundled3.2.2"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        maven {
+            id = "Maven2"
+            goals = "clean test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            mavenVersion = custom {
+                path = "%teamcity.tool.maven.3.2.2%"
             }
             dockerImage = "openjdk:17-ea-slim"
         }
