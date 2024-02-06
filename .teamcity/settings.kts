@@ -30,6 +30,7 @@ project {
 
     buildType(NonBundled396)
     buildType(Mvn)
+    buildType(BundledDefault363)
     buildType(Auto)
     buildType(OutsideOfRunner)
 
@@ -51,6 +52,22 @@ object Auto : BuildType({
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             mavenVersion = auto()
+        }
+    }
+})
+
+object BundledDefault363 : BuildType({
+    name = "bundledDefault3.6.3"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        maven {
+            id = "Maven2"
+            goals = "clean test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
     }
 })
