@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -57,4 +58,14 @@ object NonBundled396 : BuildType({
 
 object OutsideOfRunner : BuildType({
     name = "outsideOfRunner"
+
+    steps {
+        script {
+            id = "simpleRunner"
+            scriptContent = """
+                echo %teamcity.tool.maven3_3%
+                echi %teamcity.tool.maven.3.9.5%
+            """.trimIndent()
+        }
+    }
 })
