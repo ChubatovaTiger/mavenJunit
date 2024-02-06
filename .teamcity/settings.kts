@@ -5,8 +5,8 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.script
 version = "2023.11"
 
 project {
-    val numProjects=12
-    val numConfigurationsPerProject=800
+    val numProjects=200
+    
     for (i in 0..numProjects) {
         subProject {
             id("subProj_$i")
