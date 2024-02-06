@@ -69,9 +69,7 @@ object id395_2 : BuildType({
             id = "Maven2"
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
-            mavenVersion = custom {
-                path = "%teamcity.tool.maven.3.9.5%"
-            }
+            mavenVersion = bundled_2()
         }
     }
 })
