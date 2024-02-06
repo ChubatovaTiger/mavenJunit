@@ -1,6 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
-import jetbrains.buildServer.configs.kotlin.buildSteps.script
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -24,24 +23,15 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-version = "2023.11"
+version = "2023.05"
 
 project {
 
-    buildType(NonBundled396)
-    buildType(Mvn)
-    buildType(BundledDefault363)
-    buildType(Auto)
-    buildType(Nonbundled322)
-    buildType(OutsideOfRunner)
-
-    params {
-        param("env.M2_HOME", "/opt/homebrew/Cellar/maven/3.9.5/libexec")
-    }
+    buildType(Kkjkj)
 }
 
-object Auto : BuildType({
-    name = "auto"
+object Kkjkj : BuildType({
+    name = "kkjkj"
 
     vcs {
         root(DslContext.settingsRoot)
@@ -49,103 +39,10 @@ object Auto : BuildType({
 
     steps {
         maven {
-            id = "Maven2"
-            goals = "clean test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-            mavenVersion = auto()
-        }
-    }
-})
-
-object BundledDefault363 : BuildType({
-    name = "bundledDefault3.6.3"
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-    steps {
-        maven {
-            id = "Maven2"
-            goals = "clean test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-        }
-    }
-})
-
-object Mvn : BuildType({
-    name = "bundled3.2.5"
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-    steps {
-        maven {
-            id = "Maven2"
+            enabled = false
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             mavenVersion = bundled_3_2()
-            dockerImage = "openjdk:17-ea-slim"
-        }
-    }
-})
-
-object NonBundled396 : BuildType({
-    name = "non-bundled3.9.6changed"
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-    steps {
-        maven {
-            id = "Maven2"
-            goals = "clean test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-            mavenVersion = custom {
-                path = "%teamcity.tool.maven.3.9.6%"
-            }
-            dockerImage = "openjdk:17-ea-slim"
-        }
-    }
-})
-
-object Nonbundled322 : BuildType({
-    name = "nonbundled3.2.2"
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-    steps {
-        maven {
-            id = "Maven2"
-            goals = "clean test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-            mavenVersion = custom {
-                path = "%teamcity.tool.maven.3.2.2%"
-            }
-            dockerImage = "openjdk:17-ea-slim"
-        }
-    }
-})
-
-object OutsideOfRunner : BuildType({
-    name = "outsideOfRunner"
-
-    params {
-        param("mvn2", "%teamcity.tool.maven3_8%")
-    }
-
-    steps {
-        script {
-            id = "simpleRunner"
-            scriptContent = """
-                echo '%teamcity.tool.maven3_3%'
-                echo '%teamcity.tool.maven.3.9.5%'
-                echo '%mvn2%'
-            """.trimIndent()
         }
     }
 })
