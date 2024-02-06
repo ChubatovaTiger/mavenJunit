@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -43,6 +44,10 @@ object Kkjkj : BuildType({
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             mavenVersion = bundled_3_2()
+        }
+        script {
+            scriptContent = """echo 'time="2024-02-06T14:23:48Z" level=warning msg="failed to list images: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?" subtask=registry.jetbrains.team/p/em/containers/em-deployment task=Build' 1>&2"""
+            dockerImage = "ubuntu"
         }
     }
 })
