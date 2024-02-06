@@ -18,7 +18,7 @@ project {
             id("subProj_$i")
             name = "subProj $i"
 
-for (j in 0..1)
+for (j in 0..1) {
                 buildType {
                     id("Auto_$i" + "_$j")
                     name = "auto $i $j"                    
