@@ -59,6 +59,10 @@ object NonBundled396 : BuildType({
 object OutsideOfRunner : BuildType({
     name = "outsideOfRunner"
 
+    params {
+        param("mvn2", "%teamcity.tool.maven3_8%")
+    }
+
     steps {
         script {
             id = "simpleRunner"
