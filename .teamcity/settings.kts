@@ -28,6 +28,7 @@ version = "2023.11"
 project {
 
     buildType(NonBundled396)
+    buildType(OutsideOfRunner)
 
     params {
         param("env.M2_HOME", "/opt/homebrew/Cellar/maven/3.9.5/libexec")
@@ -52,4 +53,8 @@ object NonBundled396 : BuildType({
             dockerImage = "openjdk:17-ea-slim"
         }
     }
+})
+
+object OutsideOfRunner : BuildType({
+    name = "outsideOfRunner"
 })
