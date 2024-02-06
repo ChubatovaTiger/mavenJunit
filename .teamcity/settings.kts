@@ -43,22 +43,11 @@ object id395 : BuildType({
     vcs {
         root(DslContext.settingsRoot)
     }
-
-    steps {
-        maven {
-            id = "Maven2"
-            goals = "clean test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-            mavenVersion = custom {
-                path = "%teamcity.tool.maven.3.9.5%"
-            }
-        }
-    }
 })
 
 object id395_2 : BuildType({
     id("395_2")
-    name = "3.9.5 (1)"
+    name = "2.2.1"
 
     vcs {
         root(DslContext.settingsRoot)
@@ -69,7 +58,9 @@ object id395_2 : BuildType({
             id = "Maven2"
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
-            mavenVersion = bundled_2()
+            mavenVersion = custom {
+                path = "%teamcity.tool.maven%"
+            }
         }
     }
 })
