@@ -44,6 +44,7 @@ project {
                             }
                     }
                 }
+ }
 
             subProject {
                 id("subProj2_$i")
@@ -67,7 +68,7 @@ project {
                 subProject {
                 id("subProj8_$i")
                 name = "subProj8 $i"
-
+ for (j in 0..1) {
                  buildType {
                     id("BundledDefault363_$i" + "_$j")
                     name = "BundledDefault363 $i $j"                    
