@@ -46,10 +46,8 @@ object NonBundled396 : BuildType({
             id = "Maven2"
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
-            mavenVersion = custom {
-                path = "%teamcity.tool.maven.3.9.6%"
-            }
-            jdkHome = "%env.JDK_17_0_ARM64%"
+            mavenVersion = bundled_3_9_6()
+            jdkHome = "%env.JDK_11%"
         }
     }
 })
