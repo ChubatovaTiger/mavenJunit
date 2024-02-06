@@ -29,12 +29,30 @@ version = "2023.11"
 project {
 
     buildType(NonBundled396)
+    buildType(Auto)
     buildType(OutsideOfRunner)
 
     params {
         param("env.M2_HOME", "/opt/homebrew/Cellar/maven/3.9.5/libexec")
     }
 }
+
+object Auto : BuildType({
+    name = "auto"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        maven {
+            id = "Maven2"
+            goals = "clean test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            mavenVersion = auto()
+        }
+    }
+})
 
 object NonBundled396 : BuildType({
     name = "non-bundled3.9.6changed"
