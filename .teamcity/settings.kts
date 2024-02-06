@@ -63,8 +63,8 @@ object OutsideOfRunner : BuildType({
         script {
             id = "simpleRunner"
             scriptContent = """
-                echo %teamcity.tool.maven3_3%
-                echi %teamcity.tool.maven.3.9.5%
+                echo '%teamcity.tool.maven3_3%'
+                echo '%teamcity.tool.maven.3.9.5%'
             """.trimIndent()
         }
     }
