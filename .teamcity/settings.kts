@@ -5,7 +5,7 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.script
 version = "2023.11"
 
 project {
-    val numProjects=3000
+    val numProjects=300
     
     for (i in 0..numProjects) {
         subProject {
