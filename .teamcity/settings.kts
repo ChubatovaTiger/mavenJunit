@@ -9,12 +9,12 @@ project {
     
     for (i in 0..numProjects) {
         subProject {
-            id("subProj$i")
-            name = "subProj $i"
+            id("SubProj$i")
+            name = "SubProj $i"
         for (j in 0..1) {
 
                 buildType {
-                    id("subProj$i" + "_Auto$i" + "$j")
+                    id("SubProj$i" + "_Auto$i" + "$j")
                     name = "auto $i $j"                    
                     vcs {
                         root(DslContext.settingsRoot)
@@ -30,7 +30,7 @@ project {
                 }
 
                 buildType {
-                    id("subProj$i" +"_Mvn$i" + "$j")
+                    id("SubProj$i" +"_Mvn$i" + "$j")
                     name = "bundled 3.2.5 $i $j"                    
                     vcs {
                         root(DslContext.settingsRoot)
@@ -47,30 +47,30 @@ project {
  }
 
             subProject {
-                id("subProj$i" + "_subProj2")
-                name = "subProj2 $i"
+                id("SubProj$i" + "_SubProj2")
+                name = "SubProj2 $i"
                 subProject {
-                id("subProj$i" + "_subProj2" + "_subProj3")
-                name = "subProj3 $i"
+                id("SubProj$i" + "_SubProj2" + "_SubProj3")
+                name = "SubProj3 $i"
                 subProject {
-                id("subProj$i" + "_subProj2" + "_subProj3" + "_subProj4")
-                name = "subProj4 $i"
+                id("SubProj$i" + "_SubProj2" + "_SubProj3" + "_SubProj4")
+                name = "SubProj4 $i"
                 subProject {
-                id("subProj$i" + "_subProj2" + "_subProj3" + "_subProj4" + "_subProj5")
-                name = "subProj5 $i"
+                id("SubProj$i" + "_SubProj2" + "_SubProj3" + "_SubProj4" + "_SubProj5")
+                name = "SubProj5 $i"
                 subProject {
-                id("subProj$i" + "_subProj2" + "_subProj3" + "_subProj4" + "_subProj5" + "_subProj6")
-                name = "subProj6 $i"
+                id("SubProj$i" + "_SubProj2" + "_SubProj3" + "_SubProj4" + "_SubProj5" + "_SubProj6")
+                name = "SubProj6 $i"
                 }
                 subProject {
-                id("subProj$i" + "_subProj2" + "_subProj3" + "_subProj4" + "_subProj5" + "_subProj6" + "_subProj7")
-                name = "subProj7 $i"
+                id("SubProj$i" + "_SubProj2" + "_SubProj3" + "_SubProj4" + "_SubProj5" + "_SubProj6" + "_SubProj7")
+                name = "SubProj7 $i"
                 subProject {
-                id("subProj$i" + "_subProj2" + "_subProj3" + "_subProj4" + "_subProj5" + "_subProj6" + "_subProj7"  + "_subProj8")
-                name = "subProj8 $i"
+                id("SubProj$i" + "_SubProj2" + "_SubProj3" + "_SubProj4" + "_SubProj5" + "_SubProj6" + "_SubProj7"  + "_SubProj8")
+                name = "SubProj8 $i"
  for (j in 0..1) {
                  buildType {
-                    id("subProj$i" + "_subProj2" + "_subProj3" + "_subProj4" + "_subProj5" + "_subProj6" + "_subProj7"  + "_subProj8" + "_BundledDefault363$i" + "$j")
+                    id("SubProj$i" + "_SubProj2" + "_SubProj3" + "_SubProj4" + "_SubProj5" + "_SubProj6" + "_SubProj7"  + "_SubProj8" + "_BundledDefault363$i" + "$j")
                     name = "BundledDefault363 $i $j"                    
                     vcs {
                         root(DslContext.settingsRoot)
@@ -86,7 +86,7 @@ project {
                 }
 
                  buildType {
-                    id("subProj$i" + "_subProj2" + "_subProj3" + "_subProj4" + "_subProj5" + "_subProj6" + "_subProj7"  + "_subProj8" + "_NonBundled396$i" + "$j")
+                    id("SubProj$i" + "_SubProj2" + "_SubProj3" + "_SubProj4" + "_SubProj5" + "_SubProj6" + "_SubProj7"  + "_SubProj8" + "_NonBundled396$i" + "$j")
                     name = "NonBundled396 $i $j"                    
                     vcs {
                         root(DslContext.settingsRoot)
@@ -104,7 +104,7 @@ project {
                 }
 
                  buildType {
-                    id("subProj$i" + "_subProj2" + "_subProj3" + "_subProj4" + "_subProj5" + "_subProj6" + "_subProj7"  + "_subProj8" + "_Nonbundled322$i" + "$j")
+                    id("SubProj$i" + "_SubProj2" + "_SubProj3" + "_SubProj4" + "_SubProj5" + "_SubProj6" + "_SubProj7"  + "_SubProj8" + "_Nonbundled322$i" + "$j")
                     name = "Nonbundled322 $i $j"                    
                     vcs {
                         root(DslContext.settingsRoot)
@@ -122,8 +122,8 @@ project {
                 }
 
                  buildType {
-                    id("subProj$i" + "_subProj2" + "_subProj3" + "_subProj4" + "_subProj5" + "_subProj6" + "_subProj7"  + "_subProj8" + "_outsideOfRunner$i" + "$j")
-                    name = "outsideOfRunner $i $j"                    
+                    id("SubProj$i" + "_SubProj2" + "_SubProj3" + "_SubProj4" + "_SubProj5" + "_SubProj6" + "_SubProj7"  + "_SubProj8" + "_)utsideOfRunner$i" + "$j")
+                    name = "OutsideOfRunner $i $j"                    
                     vcs {
                         root(DslContext.settingsRoot)
                         }
