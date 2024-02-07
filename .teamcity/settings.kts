@@ -122,7 +122,7 @@ project {
                 }
 
                  buildType {
-                    id("SubProj$i" + "_SubProj2" + "_SubProj3" + "_SubProj4" + "_SubProj5" + "_SubProj6" + "_SubProj7"  + "_SubProj8" + "_)utsideOfRunner$i" + "$j")
+                    id("SubProj$i" + "_SubProj2" + "_SubProj3" + "_SubProj4" + "_SubProj5" + "_SubProj6" + "_SubProj7"  + "_SubProj8" + "_OutsideOfRunner$i" + "$j")
                     name = "OutsideOfRunner $i $j"                    
                     vcs {
                         root(DslContext.settingsRoot)
