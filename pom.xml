@@ -18,6 +18,12 @@
 	</properties>
 	<dependencies>
 		<dependency>
+    <groupId>org.company</groupId>
+    <artifactId>sample</artifactId>
+    <version>0.9-SNAPSHOT</version>
+</dependency>
+		
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -70,6 +76,10 @@
       <id>my-repo</id>
       <name>My Repository</name>
       <url>file:/localrepo/.m2</url>
+    </repository>
+	 <repository>
+        <id>space-mavenchubatova</id>
+        <url>https://packages.jetbrains.team/maven/p/chubatova-test-1/mavenchubatova</url>
     </repository>
   </repositories>
 </project>
